@@ -12,9 +12,9 @@ Website: <https://andyposbe.github.io/AI-in-Genomics_Workshop_Tunisia_2026/>
 
 | What you have | Folder | Example file name |
 |---|---|---|
-| A talk or session introduction from **Day 1** | `slides/day1/` | `AF-theory_Posbeyikian.pdf` |
-| A talk or session introduction from **Day 2** | `slides/day2/` | `Design-intro_Sugihara.pdf` |
-| A **flash talk** by a local researcher | `slides/flash/` | `Flash_Ben-Alaya.pdf` |
+| A talk or session introduction from **Day 1** | `slides/day1/` | `X.pdf` |
+| A talk or session introduction from **Day 2** | `slides/day2/` | `Y.pdf` |
+| A **flash talk** by a local researcher | `slides/flash/` | `Z.pdf` |
 | A **worksheet or handout** for Practical 1 | `worksheets/practical-01_predict/` | `P1-exercises.pdf` |
 | Practical 2 worksheet | `worksheets/practical-02_interpret/` | `P2-ChimeraX-exercises.pdf` |
 | Practical 3 worksheet | `worksheets/practical-03_compare/` | `P3-exercises.pdf` |
