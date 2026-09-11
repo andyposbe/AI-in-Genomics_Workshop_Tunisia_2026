@@ -28,117 +28,35 @@
   </div>
   <div class="main-content-wrap"><div class="main-content">
 <h1 id="practical-2-interpret">Practical 2: Interpret</h1>
-<dl class="session-meta" markdown="0">
-  <dt>When</dt><dd>Day 1, 15:15–17:00</dd>
-  <dt>You need</dt><dd>ChimeraX, your Practical 1 outputs, <code>data/practical-02_interpret/</code></dd>
-  <dt>You leave with</dt><dd>An annotated model, an exported contact list, and a set of candidate interface mutations</dd>
-  <dt>Pairs</dt><dd>Yes</dd>
-</dl>
-
-<nav class="page-toc"><p>On this page</p><ul><li><a href="#why-this-session-exists">Why this session exists</a></li><li><a href="#exercise-21-chimerax-basics">Exercise 2.1. ChimeraX basics</a></li><li><a href="#exercise-22-visualising-af3-models-with-their-confidence-metrics">Exercise 2.2. Visualising AF3 models with their confidence metrics</a></li><li><a href="#exercise-23-exporting-the-interface-and-designing-mutations">Exercise 2.3. Exporting the interface and designing mutations</a></li><li><a href="#troubleshooting">Troubleshooting</a></li><li><a href="#going-further">Going further</a></li></ul></nav>
-<hr />
-<h2 id="why-this-session-exists">Why this session exists</h2>
-<p>Prediction is a service; interpretation is the skill. This session is about turning a coloured cartoon into a statement you would defend in a lab meeting.</p>
-<p>By the end you should be able to:</p>
-<ul>
-<li>Explain what pLDDT and PAE measure, and why they answer different questions</li>
-<li>Load, colour and select structures in ChimeraX from the command line</li>
-<li>Colour an AlphaFold model by pLDDT and read its PAE plot inside ChimeraX</li>
-<li>Export the predicted contacts at an interface and filter them by confidence</li>
-<li>Propose interface mutations, and say what testing them would actually require</li>
-</ul>
-<h2 id="exercise-21-chimerax-basics">Exercise 2.1. ChimeraX basics</h2>
-<p>We use the command line inside ChimeraX rather than the menus, because commands are reproducible and menus are not. Open an experimental structure from the PDB:</p>
-<pre><code>open 7B1I
-</code></pre>
-<p>Click <code>[more info…]</code> in the log to see the metadata: what is the title of the associated paper, and which experimental method was used?</p>
-<p>Then work through chains, sequences and secondary structure. The hierarchy is <code>#</code> model, <code>/</code> chain, <code>:</code> residue:</p>
-<pre><code>sel #1/c              select chain C
-color sel gray        colour the selection
-color #1/c #2B89AD    same thing, one line, with a hex code
-sel #1/b:1-10         a residue range
-sel #1/b:1,5,20       a list of residues
-surface #1/c          show a molecular surface
-</code></pre>
-<p>Save your session before moving on, as ChimeraX does not save progress automatically:</p>
-<pre><code>save ChimeraX_Exercise1.cxs
-</code></pre>
-<div class="checkpoint">
-<p><span class="checkpoint-label">Checkpoint 1</span>
-Everyone has 7B1I open, coloured by secondary structure, and a saved session file.</p>
-</div>
-<h2 id="exercise-22-visualising-af3-models-with-their-confidence-metrics">Exercise 2.2. Visualising AF3 models with their confidence metrics</h2>
-<p>Use the Pikp-1_186–486 + Pathogen_protein_1 prediction from Practical 1. Download the result bundle from the AlphaFold Server and unzip it. You get around 17 files, including the top-ranked model (<code>..._model_0.cif</code>), the other ranked models, and the JSON files holding the PAE data.</p>
-<p>Drag <code>model_0.cif</code> into ChimeraX and colour by chain:</p>
-<pre><code>color #1 bychain
-</code></pre>
-<p>Load the confidence data: <strong>Tools → Structure Prediction → AlphaFold Error Plot</strong>, then pick the matching <code>..._full_data_0.json</code> if ChimeraX does not find it automatically. From here you can colour by pLDDT or by PAE domains.</p>
-<h3 id="plddt-confidence-in-a-position">pLDDT: confidence in a position</h3>
-<p>Per-residue. Answers: <em>is this residue placed correctly relative to its neighbours?</em></p>
-<p>Colour the prediction by pLDDT. What can you say about the residues at the interface between the two proteins?</p>
-<h3 id="pae-confidence-in-a-relationship">PAE: confidence in a relationship</h3>
-<p>Pairwise. Answers: <em>if I trust where residue i is, how well do I know where residue j is?</em> This is the metric that tells you about domain arrangement, and the one people skip.</p>
-<p>The PAE plot is interactive: a selection in the plot is reflected in the 3D model, which is the quickest way to find out which parts of the structure the confident blocks correspond to.</p>
-
-<blockquote class="callout callout-note">
-<p class="callout-title">Note</p>
-<p>Two rigid domains joined by a flexible linker can produce a model that looks completely
-wrong as a single object and is completely right as two objects. Read PAE before you
-conclude a prediction failed.</p>
-</blockquote>
-<h3 id="contacts-as-pseudobonds">Contacts as pseudobonds</h3>
-<p>With the PAE data loaded, draw the predicted contacts across the interface, coloured by PAE:</p>
-<pre><code>alphafold contacts #1/a to #1/b distance 3.5
-</code></pre>
-<p>Which β-sheet on the effector side has more high-confidence (low PAE) contacts with Pikp-1? The same command takes residue ranges and lists, so you can narrow it down:</p>
-<pre><code>alphafold contacts #1/b:20 to #1/a distance 4.5
-</code></pre>
-<div class="checkpoint">
-<p><span class="checkpoint-label">Checkpoint 2</span>
-Everyone can point at a region of their model and say which metric made them distrust it.</p>
-</div>
-<h2 id="exercise-23-exporting-the-interface-and-designing-mutations">Exercise 2.3. Exporting the interface and designing mutations</h2>
-<p>Add <code>outputFile</code> to export the contact list for downstream analysis:</p>
-<pre><code>alphafold contacts #1/a to #1/b distance 3.5 outputFile AF3-contacts.txt
-</code></pre>
-<p>Each row is a residue pair below the distance cutoff with its PAE score. Open it in a spreadsheet and sort by PAE to drop the low-confidence contacts.</p>
-<p><strong>PAE confidence</strong> · 0–10 confident · 10–15 grey zone · &gt;15 poor confidence</p>
-<p>Then, from the interface you have just described:</p>
-<ul>
-<li>Which residues, in either protein, would you mutate to abolish the interaction?</li>
-<li>What experiments would test those mutants in the lab, and what controls would you include?</li>
-</ul>
-
-<blockquote class="callout callout-warning">
-<p class="callout-title">Careful</p>
-<p>A drop in interface score after mutation does not predict a loss of binding. It generates
-a hypothesis for the bench.</p>
-</blockquote>
-<h2 id="troubleshooting">Troubleshooting</h2>
+<p class="fs-5 fw-300">Introduction to molecular visualisation to interpret protein models and design key experiments.</p>
+<p><strong>When</strong> · Day 1, 15:15–17:00</p>
+<h2 id="materials">Materials</h2>
+<p>Links are added here during and after the workshop.</p>
 <table>
 <thead>
 <tr>
-<th>Problem</th>
-<th>Fix</th>
+<th></th>
+<th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>ChimeraX will not open the CIF</td>
-<td>Unzip the bundle first; open the model file, not the folder.</td>
+<td>Slides</td>
+<td><em>To be added</em></td>
 </tr>
 <tr>
-<td>No PAE plot</td>
-<td>PAE lives in the JSON, not the CIF. Download the full bundle.</td>
+<td>Worksheet</td>
+<td><em>To be added</em></td>
 </tr>
 <tr>
-<td><code>alphafold contacts</code> does nothing</td>
-<td>The PAE data must be loaded first via the AlphaFold Error Plot tool.</td>
+<td>Data files</td>
+<td><a href="https://github.com/andyposbe/AI-in-Genomics_Workshop_Tunisia_2026/tree/main/data/practical-02_interpret"><code>data/practical-02_interpret/</code></a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="going-further">Going further</h2>
-<div class="gap" markdown="0"><span class="gap-label">To write</span><span>links to the metric definitions, the AlphaFold papers, and the ChimeraX AlphaFold tutorials.</span></div>
+<h2 id="before-the-session">Before the session</h2>
+<p>Bring your laptop with ChimeraX installed and an AlphaFold Server account ready. See <a href="../setup.md">Before you arrive</a>.</p>
+<p>Questions during the session: ask any trainer or facilitator.</p>
   </div></div>
 </div>
 </body>

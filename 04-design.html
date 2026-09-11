@@ -28,96 +28,35 @@
   </div>
   <div class="main-content-wrap"><div class="main-content">
 <h1 id="practical-4-design">Practical 4: Design</h1>
-<dl class="session-meta" markdown="0">
-  <dt>When</dt><dd>Day 2, 13:30–14:45</dd>
-  <dt>You need</dt><dd>ChimeraX, a browser or terminal, <code>data/practical-04_design/</code></dd>
-  <dt>You leave with</dt><dd>Designed sequences, a folded prediction of your own design, and a filtered shortlist</dd>
-  <dt>Pairs</dt><dd>Yes</dd>
-</dl>
-
-<nav class="page-toc"><p>On this page</p><ul><li><a href="#why-this-session-exists">Why this session exists</a></li><li><a href="#step-1-inverse-folding-with-proteinmpnn">Step 1. Inverse folding with ProteinMPNN</a></li><li><a href="#step-2-does-the-design-fold">Step 2. Does the design fold?</a></li><li><a href="#step-3-binder-design">Step 3. Binder design</a></li><li><a href="#step-4-filtering">Step 4. Filtering</a></li><li><a href="#step-5-what-happens-at-the-bench">Step 5. What happens at the bench</a></li><li><a href="#step-6-take-it-back-to-your-own-system">Step 6. Take it back to your own system</a></li><li><a href="#troubleshooting">Troubleshooting</a></li><li><a href="#going-further">Going further</a></li></ul></nav>
-<hr />
-<h2 id="why-this-session-exists">Why this session exists</h2>
-<p>Everything up to here has been reading. This session is writing. The conceptual jump is small and the practical consequences are large: the same models that predict structure from sequence can be run to propose sequence for a structure.</p>
-<p>By the end you should be able to:</p>
-<ul>
-<li>Explain inverse folding in one sentence to someone who missed the session</li>
-<li>Generate sequences for a fixed backbone with ProteinMPNN and judge whether they are plausible</li>
-<li>Run a binder design against a chosen target surface</li>
-<li>Filter designs down to the handful you would actually order</li>
-<li>Say what a designed binder is and is not evidence of</li>
-</ul>
-<h2 id="step-1-inverse-folding-with-proteinmpnn">Step 1. Inverse folding with ProteinMPNN</h2>
-<p>Structure prediction asks: given this sequence, what shape? Inverse folding asks the reverse: given this shape, which sequences would fold into it?</p>
-<p>Run it on a backbone from Practical 1 or 3, generate a handful of sequences, and compare them to the native. The positions the model refuses to change are the interesting ones, usually the core and the functionally constrained residues.</p>
-<div class="checkpoint">
-<p><span class="checkpoint-label">Checkpoint 1</span>
-Everyone has a set of designed sequences and has compared identity to the native backbone.</p>
-</div>
-<h2 id="step-2-does-the-design-fold">Step 2. Does the design fold?</h2>
-<p>Take your best designed sequence back through Practical 1. Predict it, then superimpose the prediction on the backbone you designed for, using the Practical 3 method.</p>
-
-<blockquote class="callout callout-warning">
-<p class="callout-title">Careful</p>
-<p>This is a closed loop: a model checking its own homework. A design that passes
-self-consistency has cleared the lowest bar, not the highest one.</p>
-</blockquote>
-<h2 id="step-3-binder-design">Step 3. Binder design</h2>
-<p>A binder is a protein designed to attach to a chosen surface of a target protein, used for example to block the activity of a toxin, or in plant immunity to recognise a pathogen effector.</p>
-<p>We demonstrate binder design with <strong>PXDesign</strong>. <div class="gap" markdown="0"><span class="gap-label">To write</span><span>the exact run: target surface from the P1/P2 complex, hotspot residue selection, number of designs, expected runtime. Other tools under consideration for the session: BoltzGen, BindCraft, Protenix.</span></div></p>
-
-<blockquote class="callout callout-note">
-<p class="callout-title">Note</p>
-<p><strong>Facilitators:</strong> the toolchain has to run inside 135 minutes on participant laptops with
-conference wifi and no GPU. A hybrid works well: everyone analyses a pre-computed design
-set, and anyone whose connection holds also launches their own run.</p>
-</blockquote>
-<div class="checkpoint">
-<p><span class="checkpoint-label">Checkpoint 2</span>
-Everyone has a set of candidate binders, whether their own or the pre-computed set.</p>
-</div>
-<h2 id="step-4-filtering">Step 4. Filtering</h2>
-<p>Generating designs is cheap. Deciding which twelve to order is the job.</p>
-<div class="gap" markdown="0"><span class="gap-label">To write</span><span>the filter cascade you want them to apply, with thresholds and the reasoning behind each. Interface confidence, self-consistency, buried surface area, aggregation and expression liabilities. Make them discard designs and defend the cuts.</span></div>
-
-<h2 id="step-5-what-happens-at-the-bench">Step 5. What happens at the bench</h2>
-<div class="gap" markdown="0"><span class="gap-label">To write</span><span>honest numbers on experimental success rates for binder design, with citations, and the workflow that follows: expression, purification, binding assay, and what a negative result actually tells you.</span></div>
-
-<h2 id="step-6-take-it-back-to-your-own-system">Step 6. Take it back to your own system</h2>
-<p>Bring one question to the closing discussion:</p>
-<ul>
-<li>What would you design, if you could design anything, for your own system?</li>
-<li>What is the step in that plan you have no idea how to do?</li>
-</ul>
-<h2 id="troubleshooting">Troubleshooting</h2>
+<p class="fs-5 fw-300">Design de novo structures and binders against a target to create novel solutions.</p>
+<p><strong>When</strong> · Day 2, 13:30–14:45</p>
+<h2 id="materials">Materials</h2>
+<p>Links are added here during and after the workshop.</p>
 <table>
 <thead>
 <tr>
-<th>Problem</th>
-<th>Fix</th>
+<th></th>
+<th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Runtime disconnected</td>
-<td>Reconnect and restart the cell. Designs are not saved automatically, so download as you go.</td>
+<td>Slides</td>
+<td><em>To be added</em></td>
 </tr>
 <tr>
-<td>Out of memory</td>
-<td>Reduce batch size or design length.</td>
+<td>Worksheet</td>
+<td><em>To be added</em></td>
 </tr>
 <tr>
-<td>Designs look like poly-alanine</td>
-<td>Check you passed the right chain and that the backbone is not mostly low-confidence.</td>
-</tr>
-<tr>
-<td>No time left</td>
-<td>Switch to the pre-computed set in <code>data/practical-04_design/</code> and go straight to filtering.</td>
+<td>Data files</td>
+<td><a href="https://github.com/andyposbe/AI-in-Genomics_Workshop_Tunisia_2026/tree/main/data/practical-04_design"><code>data/practical-04_design/</code></a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="going-further">Going further</h2>
-<div class="gap" markdown="0"><span class="gap-label">To write</span><span>where to read next, which methods are moving fastest, and what a realistic first project looks like for someone returning to their own lab with no GPU.</span></div>
+<h2 id="before-the-session">Before the session</h2>
+<p>Bring your laptop with ChimeraX installed and an AlphaFold Server account ready. See <a href="../setup.md">Before you arrive</a>.</p>
+<p>Questions during the session: ask any trainer or facilitator.</p>
   </div></div>
 </div>
 </body>

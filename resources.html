@@ -28,112 +28,37 @@
   </div>
   <div class="main-content-wrap"><div class="main-content">
 <h1 id="resources">Resources</h1>
-<p class="fs-5 fw-300">Everything you need during the workshop, and the things worth reading afterwards.</p>
-<h2 id="tools-we-use">Tools we use</h2>
+<p class="fs-5 fw-300">Tools used in the workshop, and the materials we add afterwards.</p>
+<h2 id="tools">Tools</h2>
 <table>
 <thead>
 <tr>
 <th>Tool</th>
-<th>What for</th>
 <th>Link</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>AlphaFold Server</td>
-<td>Structure prediction (P1)</td>
 <td><a href="https://alphafoldserver.com/">https://alphafoldserver.com/</a></td>
 </tr>
 <tr>
 <td>UCSF ChimeraX</td>
-<td>Visualisation and superposition (P2–P4)</td>
-<td><a href="https://www.cgl.ucsf.edu/chimerax/">https://www.cgl.ucsf.edu/chimerax/</a></td>
-</tr>
-<tr>
-<td>AlphaFold DB</td>
-<td>Pre-computed predictions for most known proteins</td>
-<td><a href="https://alphafold.ebi.ac.uk/">https://alphafold.ebi.ac.uk/</a></td>
-</tr>
-<tr>
-<td>PDB</td>
-<td>Experimental structures</td>
-<td><a href="https://www.rcsb.org/">https://www.rcsb.org/</a></td>
-</tr>
-<tr>
-<td>UniProt</td>
-<td>Sequences and annotation</td>
-<td><a href="https://www.uniprot.org/">https://www.uniprot.org/</a></td>
-</tr>
-<tr>
-<td>TM-align</td>
-<td>Pairwise structure alignment (P3)</td>
-<td><a href="https://zhanggroup.org/TM-align/">https://zhanggroup.org/TM-align/</a></td>
-</tr>
-<tr>
-<td>Foldseek</td>
-<td>Structure search (P3)</td>
-<td><a href="https://search.foldseek.com/">https://search.foldseek.com/</a></td>
-</tr>
-<tr>
-<td>FoldMason</td>
-<td>Multiple structure alignment (P3)</td>
-<td><a href="https://foldmason.foldseek.com/">https://foldmason.foldseek.com/</a></td>
-</tr>
-<tr>
-<td>ProteinMPNN</td>
-<td>Inverse folding (P4)</td>
-<td><a href="https://github.com/dauparas/ProteinMPNN">https://github.com/dauparas/ProteinMPNN</a></td>
-</tr>
-<tr>
-<td>PXDesign</td>
-<td>Binder design (P4)</td>
-<td><a href="https://pxdesign.bio/">https://pxdesign.bio/</a></td>
+<td><a href="https://www.cgl.ucsf.edu/chimerax/download.html">https://www.cgl.ucsf.edu/chimerax/download.html</a></td>
 </tr>
 </tbody>
 </table>
-<div class="gap" markdown="0"><span class="gap-label">To write</span><span>pin version numbers for each tool once the session runs are finalised.</span></div>
-
-<h2 id="chimerax-command-cheatsheet">ChimeraX command cheatsheet</h2>
-<p>The commands used across Practicals 2–4. Specifiers: <code>#</code> model, <code>/</code> chain, <code>:</code> residue.</p>
-<pre><code>open 7B1I                                    open a structure from the PDB
-open model_0.cif                             open a local model
-color #1 bychain                             colour by chain
-sel #1/c                                     select chain C
-color sel gray                               colour the current selection
-color #1/c #2B89AD                           select and colour in one line, hex code
-sel #1/b:1-10                                a residue range
-sel #1/b:1,5,20                              a list of residues
-surface #1/c                                 show a molecular surface
-alphafold contacts #1/a to #1/b distance 3.5              contacts across an interface
-alphafold contacts #1/a to #1/b distance 3.5 outputFile AF3-contacts.txt   export them
-matchmaker #2 to #1                          superimpose two structures
-pwd                                          where files are being saved
-save ChimeraX_Exercise1.cxs                  save the session
-</code></pre>
-<p>PAE data is loaded from the menu: <strong>Tools → Structure Prediction → AlphaFold Error Plot</strong>.</p>
-<h2 id="slides-and-written-guides">Slides and written guides</h2>
-<p>Slide decks from the talks and session introductions are uploaded to <a href="https://github.com/andyposbe/AI-in-Genomics_Workshop_Tunisia_2026/tree/main/slides"><code>slides/</code></a> within two weeks of each workshop.</p>
-<p>Printable worksheets are in <a href="https://github.com/andyposbe/AI-in-Genomics_Workshop_Tunisia_2026/tree/main/worksheets"><code>worksheets/</code></a>. The written guide for each practical lives on its own page under <a href="practicals.html">Practicals</a>, updated during and after the workshop, so it stays the current version of the material. <a href="materials.html">Slides &amp; worksheets</a> lists everything in one place.</p>
-<h2 id="reading">Reading</h2>
-<p><strong>Start here</strong></p>
-<div class="gap" markdown="0"><span class="gap-label">To write</span><span>three papers maximum for people who will read three papers.</span></div>
-
-<p><strong>If you want the methods</strong></p>
-<div class="gap" markdown="0"><span class="gap-label">To write</span><span>AlphaFold 2 and 3 papers, the inverse-folding and binder-design methods used in P4, and one good critical review of what these models get wrong.</span></div>
-
-<p><strong>On reproducibility</strong></p>
-<div class="gap" markdown="0"><span class="gap-label">To write</span><span>the GoRHEP material referenced in the workshop description, plus practical guidance on recording model versions, seeds and databases alongside results.</span></div>
-
-<h2 id="compute-after-the-workshop">Compute after the workshop</h2>
-<p>The hardest part of taking this home is access to a GPU.</p>
-<div class="gap" markdown="0"><span class="gap-label">To write</span><span>free and low-cost options relevant to researchers in Tunisia: Colab tiers, national and regional HPC access, EMBL-EBI services, and which parts of the workflow genuinely need a GPU versus which run fine on a laptop. Be concrete; this is the section people will come back to.</span></div>
-
+<p><em>Further tools used in the sessions will be listed here.</em></p>
+<h2 id="slides-and-worksheets">Slides and worksheets</h2>
+<p>See <a href="materials.html">Slides &amp; worksheets</a>.</p>
+<h2 id="further-reading">Further reading</h2>
+<p><em>To be added.</em></p>
 <h2 id="stay-in-touch">Stay in touch</h2>
 <ul>
 <li>GetGenome: <a href="https://getgenome.net/">https://getgenome.net/</a></li>
 <li>Email: <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#103;&#101;&#116;&#103;&#101;&#110;&#111;&#109;&#101;&#64;&#116;&#115;&#108;&#46;&#97;&#99;&#46;&#117;&#107;">&#103;&#101;&#116;&#103;&#101;&#110;&#111;&#109;&#101;&#64;&#116;&#115;&#108;&#46;&#97;&#99;&#46;&#117;&#107;</a></li>
-<li><code>#GetGenome</code> <code>#AIinGenomics2026</code></li>
 </ul>
+<p><code>#GetGenome</code> <code>#AIinGenomics2026</code></p>
   </div></div>
 </div>
 </body>

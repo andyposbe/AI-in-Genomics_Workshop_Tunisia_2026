@@ -28,106 +28,35 @@
   </div>
   <div class="main-content-wrap"><div class="main-content">
 <h1 id="practical-1-predict">Practical 1: Predict</h1>
-<dl class="session-meta" markdown="0">
-  <dt>When</dt><dd>Day 1, 11:20–12:30</dd>
-  <dt>You need</dt><dd>A browser, an AlphaFold Server account, <code>data/practical-01_predict/</code></dd>
-  <dt>You leave with</dt><dd>Predicted structures for a monomer and for complexes, plus their confidence metrics</dd>
-  <dt>Pairs</dt><dd>Yes, one screen submitting, one reading</dd>
-</dl>
-
-<nav class="page-toc"><p>On this page</p><ul><li><a href="#why-this-session-exists">Why this session exists</a></li><li><a href="#the-example-system">The example system</a></li><li><a href="#exercise-1-model-a-single-chain">Exercise 1. Model a single chain</a></li><li><a href="#exercise-2-oligomeric-states">Exercise 2. Oligomeric states</a></li><li><a href="#exercise-3-proteinprotein-interaction-prediction">Exercise 3. Protein–protein interaction prediction</a></li><li><a href="#your-own-protein">Your own protein</a></li><li><a href="#troubleshooting">Troubleshooting</a></li><li><a href="#going-further">Going further</a></li></ul></nav>
-<hr />
-<h2 id="why-this-session-exists">Why this session exists</h2>
-<p>Pressing submit is easy. The reason we spend the session here is not the button. It is so that by the end you can say which parts of your model you would stake an experiment on.</p>
-<p>By the end you should be able to:</p>
-<ul>
-<li>Submit monomer, homomer and heteromer jobs to the AlphaFold 3 server and explain how the inputs differ</li>
-<li>Set the modelling parameters, seed number and templates, and say what they change</li>
-<li>Read pLDDT, pTM and ipTM well enough to rank two models against each other</li>
-<li>Say what the model does <strong>not</strong> know</li>
-</ul>
-<h2 id="the-example-system">The example system</h2>
-<p>We work with the rice immune receptor <strong>Pikp-1</strong>, which confers resistance to <em>Pyricularia oryzae</em>, the fungus causing rice blast disease. The practicals use residues 186–486, which span the integrated HMA domain and the NB-ARC domain, and three effector proteins secreted by the same fungus: <strong>AVR-PikD</strong>, <strong>AVR-Pib</strong> and <strong>AVR-Pii</strong> (given to you as Pathogen_protein_1, 2 and 3).</p>
-<p>All sequences are in <a href="https://github.com/andyposbe/AI-in-Genomics_Workshop_Tunisia_2026/tree/main/data/practical-01_predict"><code>data/practical-01_predict/</code></a>.</p>
-<h2 id="exercise-1-model-a-single-chain">Exercise 1. Model a single chain</h2>
-<p>Go to <a href="https://alphafoldserver.com/">https://alphafoldserver.com/</a>, create an account, and submit <code>Pikp-1_186-486</code>.</p>
-<p>While it runs, read the next section. Do not sit and watch the queue.</p>
-<p>Then discuss:</p>
-<ul>
-<li>What does pTM stand for, and what is the pTM score for this prediction?</li>
-<li>Is pLDDT high all over the model, or are some residues predicted more confidently than others?</li>
-<li>Are there regions of the PAE plot where the relative positions are unreliable?</li>
-</ul>
-<h3 id="reading-the-colours">Reading the colours</h3>
-<p>The default colouring is per-residue confidence:</p>
-<div class="plddt-scale" markdown="0">
-  <span class="vh">Very high · pLDDT &gt; 90<br>Backbone and side chains reliable</span>
-  <span class="cf">Confident · 70–90<br>Backbone reliable</span>
-  <span class="lo">Low · 50–70<br>Treat with caution</span>
-  <span class="vl">Very low · &lt; 50<br>Often disordered, not wrong, but undefined</span>
-</div>
-
-<p>A very low score is information, not failure. Regions scoring below 50 are frequently genuinely disordered in solution.</p>
-<div class="checkpoint">
-<p><span class="checkpoint-label">Checkpoint 1</span>
-Everyone has a completed monomer job and has downloaded the result bundle.</p>
-</div>
-<h2 id="exercise-2-oligomeric-states">Exercise 2. Oligomeric states</h2>
-<p>Model the <strong>HMA domain</strong> of Pikp-1 on its own as a dimer (n = 2), trimer (n = 3) and tetramer (n = 4), and record pTM and ipTM for each.</p>
-<ul>
-<li>What does ipTM stand for?</li>
-<li>What does the PAE look like across the different oligomeric states? Is there high confidence in the relative positioning of the protomers in every case?</li>
-</ul>
-<p>The crystal structure of Pikp-HMA was solved as a homodimer (PDB <a href="https://www.rcsb.org/structure/5A6P">5A6P</a>, Maqbool <em>et al.</em> 2015). Compare that with what the modelling suggests.</p>
-<h2 id="exercise-3-proteinprotein-interaction-prediction">Exercise 3. Protein–protein interaction prediction</h2>
-<p>Model three heteromeric complexes between Pikp-1_186–486 and each of the three pathogen proteins. Using the confidence metrics alone:</p>
-<ul>
-<li>Which effector is most likely to interact with Pikp-1, and which metrics tell you that?</li>
-<li>Which Pikp-1 domain contributes to binding?</li>
-<li>What experiments would you do to test the hypothesis?</li>
-</ul>
-<div class="checkpoint">
-<p><span class="checkpoint-label">Checkpoint 2</span>
-Everyone has the three complex predictions and has found the interface confidence score for each.</p>
-</div>
-
-<blockquote class="callout callout-warning">
-<p class="callout-title">Careful</p>
-<p>A high interface score is not evidence that two proteins interact in a cell. It is evidence
-that the model can place them together confidently. All models need to be tested with
-functional assays afterwards.</p>
-</blockquote>
-<h2 id="your-own-protein">Your own protein</h2>
-<p>Bring a sequence from your own work and submit it. Write down your prediction before the job finishes: which regions do you expect to score well, and why? Then check.</p>
-<h2 id="troubleshooting">Troubleshooting</h2>
+<p class="fs-5 fw-300">Submit your sequence data to predict models, interpret and compare scores across complexes.</p>
+<p><strong>When</strong> · Day 1, 11:20–12:30</p>
+<h2 id="materials">Materials</h2>
+<p>Links are added here during and after the workshop.</p>
 <table>
 <thead>
 <tr>
-<th>Problem</th>
-<th>Fix</th>
+<th></th>
+<th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Job stuck in queue</td>
-<td>Expected at peak times. Carry on; use <code>data/practical-01_predict/precomputed/</code>.</td>
+<td>Slides</td>
+<td><em>To be added</em></td>
 </tr>
 <tr>
-<td>Hit the daily job limit</td>
-<td>Pair up and share a submission. Limits are per account.</td>
+<td>Worksheet</td>
+<td><em>To be added</em></td>
 </tr>
 <tr>
-<td>Sequence rejected</td>
-<td>Check for stop codons, gaps, or non-standard characters.</td>
-</tr>
-<tr>
-<td>Download will not open</td>
-<td>It is a zip. Unzip before opening the CIF.</td>
+<td>Data files</td>
+<td><a href="https://github.com/andyposbe/AI-in-Genomics_Workshop_Tunisia_2026/tree/main/data/practical-01_predict"><code>data/practical-01_predict/</code></a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="going-further">Going further</h2>
-<div class="gap" markdown="0"><span class="gap-label">To write</span><span>pointers to local/ColabFold alternatives, batch submission, and what changes when you need thousands of predictions rather than three. Link the Bifrost work here.</span></div>
+<h2 id="before-the-session">Before the session</h2>
+<p>Bring your laptop with ChimeraX installed and an AlphaFold Server account ready. See <a href="../setup.md">Before you arrive</a>.</p>
+<p>Questions during the session: ask any trainer or facilitator.</p>
   </div></div>
 </div>
 </body>
