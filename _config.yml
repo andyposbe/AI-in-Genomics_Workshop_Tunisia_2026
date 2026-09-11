@@ -76,6 +76,7 @@ callouts:
     color: purple
 
 plugins:
+  - jekyll-include-cache
   - jekyll-remote-theme
   - jekyll-seo-tag
   - jekyll-sitemap
