@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>P3: Compare · AI in Genomics 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="side-bar">
+  <div class="site-header">
+    <a href="index.html"><img class="site-logo" src="assets/img/getgenome-logo.png" alt="GetGenome"></a>
+    <a href="index.html" class="site-title">AI in Genomics 2026</a>
+    <p class="site-desc">Tunisia · 14–18 Sept 2026</p>
+  </div>
+  <nav class="site-nav"><ul><li class="nav-top"><a href="index.html">Home</a></li><li class="nav-top"><a href="setup.html">Before you arrive</a></li><li class="nav-top"><a href="programme.html">Programme</a></li><li class="nav-top"><a href="practicals.html">Practicals</a></li><li class="nav-child"><a href="01-predict.html">P1: Predict</a></li><li class="nav-child"><a href="02-interpret.html">P2: Interpret</a></li><li class="nav-child"><a href="03-compare.html" class="active">P3: Compare</a></li><li class="nav-child"><a href="04-design.html">P4: Design</a></li><li class="nav-top"><a href="team.html">Team</a></li><li class="nav-top"><a href="materials.html">Slides &amp; worksheets</a></li><li class="nav-top"><a href="resources.html">Resources</a></li><li class="nav-top"><a href="faq.html">FAQ</a></li></ul></nav>
+  <footer class="site-footer">
+    Delivered by GetGenome and The Sainsbury Laboratory, supported through the
+    Bifrost initiative (Kamoun Lab, TSL). Teaching materials CC BY 4.0, code MIT.
+  </footer>
+</div>
+<div class="main">
+  <div class="main-header">
+    <a class="aux-link" href="https://github.com/andyposbe/AI-in-Genomics_Workshop_Tunisia_2026" target="_blank" rel="noopener">View on GitHub</a>
+  </div>
+  <div class="main-content-wrap"><div class="main-content">
+<h1 id="practical-3-compare">Practical 3: Compare</h1>
+<dl class="session-meta" markdown="0">
+  <dt>When</dt><dd>Day 2, 09:30–11:15</dd>
+  <dt>You need</dt><dd>ChimeraX, a terminal, <code>data/practical-03_compare/</code></dd>
+  <dt>You leave with</dt><dd>A pairwise superposition, a set of structural neighbours, and a multiple structure alignment</dd>
+  <dt>Pairs</dt><dd>Yes</dd>
+</dl>
+
+<nav class="page-toc"><p>On this page</p><ul><li><a href="#why-this-session-exists">Why this session exists</a></li><li><a href="#step-1-pairwise-alignment-with-tm-align">Step 1. Pairwise alignment with TM-align</a></li><li><a href="#step-2-structure-search-with-foldseek">Step 2. Structure search with Foldseek</a></li><li><a href="#step-3-multiple-structure-alignment-with-foldmason">Step 3. Multiple structure alignment with FoldMason</a></li><li><a href="#your-own-set">Your own set</a></li><li><a href="#troubleshooting">Troubleshooting</a></li><li><a href="#going-further">Going further</a></li></ul></nav>
+<hr />
+<h2 id="why-this-session-exists">Why this session exists</h2>
+<p>One structure is an anecdote. Once you have thirty, you can ask questions sequence alone cannot answer: which of these share a fold despite sharing no identity, and which look similar for trivial reasons? This is structure-based annotation.</p>
+<p>By the end you should be able to:</p>
+<ul>
+<li>Align two structures with TM-align and interpret the TM-score</li>
+<li>Search a structure against a database with Foldseek and interpret the hits</li>
+<li>Align multiple structures with FoldMason and read the result</li>
+<li>Explain when structural similarity implies shared function and when it does not</li>
+</ul>
+<h2 id="step-1-pairwise-alignment-with-tm-align">Step 1. Pairwise alignment with TM-align</h2>
+<p>Start inside ChimeraX for the visual version:</p>
+<pre><code>open &lt;model-A&gt;.cif
+open &lt;model-B&gt;.cif
+matchmaker #2 to #1
+</code></pre>
+<p>Then run the same pair through TM-align and compare what the two tell you.</p>
+<div class="gap" markdown="0"><span class="gap-label">To write</span><span>how to read the TM-align output: aligned length, RMSD, TM-score, and which of the two TM-scores (normalised by which chain) you should quote. The key point: RMSD over few residues is meaningless, and a global RMSD hides local agreement.</span></div>
+
+<div class="checkpoint">
+<p><span class="checkpoint-label">Checkpoint 1</span>
+Everyone has two structures superimposed and can state the TM-score and how many residues it covers.</p>
+</div>
+<h2 id="step-2-structure-search-with-foldseek">Step 2. Structure search with Foldseek</h2>
+<p>Query the example structure against a structure database and look at the top hits.</p>
+<div class="gap" markdown="0"><span class="gap-label">To write</span><span>the exact Foldseek route used on the day (web server vs local install), the database to search, and the columns to read. Find at least one hit with negligible sequence identity but a clear structural match. That case is the argument for the whole session.</span></div>
+
+<h2 id="step-3-multiple-structure-alignment-with-foldmason">Step 3. Multiple structure alignment with FoldMason</h2>
+<p>Align the provided set of structures and inspect the alignment and the tree that comes with it.</p>
+<div class="gap" markdown="0"><span class="gap-label">To write</span><span>the FoldMason command, the input set, and what to look at in the output. Where do the structural clusters agree with the sequence tree, and where do they disagree? Disagreement is the interesting case: convergent folds, domain shuffling, or a low-confidence model contaminating the set.</span></div>
+
+<div class="checkpoint">
+<p><span class="checkpoint-label">Checkpoint 2</span>
+Everyone has an alignment for the provided set and has identified the outlier.</p>
+</div>
+<h2 id="your-own-set">Your own set</h2>
+<p>Bring a family you work on. Ten to thirty members is a good size for the time available.</p>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<table>
+<thead>
+<tr>
+<th>Problem</th>
+<th>Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Superposition is nonsense</td>
+<td>You may be aligning different domains. Restrict to a residue range.</td>
+</tr>
+<tr>
+<td>Search returns nothing</td>
+<td>Check the input format and that the query is a single chain.</td>
+</tr>
+<tr>
+<td>Out of time</td>
+<td>Use the pre-computed results in <code>data/practical-03_compare/</code> and carry on.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="going-further">Going further</h2>
+<div class="gap" markdown="0"><span class="gap-label">To write</span><span>scaling to thousands of structures, structure-aware phylogenetics and its current limitations, and where this feeds into Practical 4.</span></div>
+  </div></div>
+</div>
+</body>
+</html>
