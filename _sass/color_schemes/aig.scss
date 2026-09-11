@@ -1,0 +1,82 @@
+// ---------------------------------------------------------------------------
+// AI in Genomics 2026 — colour scheme
+//
+// Sampled from the GetGenome logo: the indigo-to-coral ribbon of the
+// "Genomics for all" mark. Brand colours carry the interface.
+//
+// The AlphaFold pLDDT scale is kept separately and used ONLY where it means
+// pLDDT. Those four colours are AlphaFold's own convention — participants
+// learn to read them on a structure in Practical 2, so they must never
+// appear as decoration anywhere else on the site.
+// ---------------------------------------------------------------------------
+
+// --- GetGenome brand ---
+$gg-ink:      #403855; // deep indigo — the "Get" wordmark
+$gg-purple:   #5f468d; // primary
+$gg-violet:   #7c4b83;
+$gg-rose:     #a85674; // "GENOMICS FOR ALL" tagline
+$gg-coral:    #ca6560;
+$tsl-blue:    #2a5396;
+
+// --- AlphaFold pLDDT scale (data only) ---
+$plddt-very-high: #0053d6;
+$plddt-confident: #65cbf3;
+$plddt-low:       #ffdb13;
+$plddt-very-low:  #ff7d45;
+
+// --- neutrals, warmed slightly towards the indigo so they sit with the mark ---
+$ink:        #221d2e;
+$ink-muted:  #635c73;
+$rule:       #e4e0ec;
+$paper:      #ffffff;
+$paper-sunk: #f7f5fa;
+
+$body-background-color:          $paper;
+$sidebar-color:                  $paper-sunk;
+$search-background-color:        $paper;
+$table-background-color:         $paper;
+$code-background-color:          $paper-sunk;
+$feedback-color:                 $paper-sunk;
+
+$body-text-color:                $ink;
+$body-heading-color:             $gg-ink;
+$nav-child-link-color:           $ink-muted;
+$search-result-preview-color:    $ink-muted;
+
+$link-color:                     $gg-purple;
+$btn-primary-color:              $gg-purple;
+$base-button-color:              $paper;
+
+$border-color:                   $rule;
+
+$grey-dk-000: $ink-muted;
+$grey-dk-100: #4a4360;
+$grey-dk-250: $gg-ink;
+$grey-dk-300: $ink;
+
+$purple-000: #f0ebf7;
+$purple-100: #b39ed4;
+$purple-200: $gg-violet;
+$purple-300: $gg-purple;
+
+$blue-000: #eef1f9;
+$blue-100: #8fa6cf;
+$blue-200: #3f6bb0;
+$blue-300: $tsl-blue;
+
+$yellow-000: #fdf2ef;
+$yellow-100: #e9a79f;
+$yellow-200: $gg-coral;
+$yellow-300: #8f3f3b;
+
+$red-000: #fbeef2;
+$red-100: #d9a0b3;
+$red-200: $gg-rose;
+$red-300: #7c3b52;
+
+$body-font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+$body-heading-font-family: "Poppins", "IBM Plex Sans", -apple-system, sans-serif;
+$mono-font-family: "IBM Plex Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+
+$body-line-height: 1.6;
+$content-line-height: 1.65;
