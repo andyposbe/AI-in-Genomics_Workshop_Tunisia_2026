@@ -1,7 +1,6 @@
 # Adding your slides and worksheets
 
-For trainers and facilitators. No git, no terminal, no coding. You need a free
-GitHub account and about five minutes.
+For trainers and facilitators.
 
 Repository: <https://github.com/andyposbe/AI-in-Genomics_Workshop_Tunisia_2026>
 Website: <https://andyposbe.github.io/AI-in-Genomics_Workshop_Tunisia_2026/>
