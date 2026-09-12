@@ -1,9 +1,3 @@
 # practical-04_design
 
-<!-- FILL IN: list every file in this folder, what it is, where it came from,
-     and which step of the practical uses it. -->
-
-## Pre-computed fallback
-
-`precomputed/` holds the output of every step in this session, so anyone who
-gets stuck can continue.
+Input files for the Design session. Added by the trainers before the session.
