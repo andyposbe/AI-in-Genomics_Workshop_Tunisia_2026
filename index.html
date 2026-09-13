@@ -6,7 +6,7 @@
 <title>AI in Genomics 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&family=Poppins:wght@500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -29,11 +29,23 @@
   <div class="main-content-wrap"><div class="main-content">
 <div class="hero" markdown="0">
   <p class="hero-title">AI in Genomics: Real-World Applications &amp; Opportunities</p>
-  <div class="hero-when">
-    <div><b>14–15 September 2026</b><span>Centre of Biotechnology of Borj Cédria (CBBC)<br>Espace Zmorda, Soukra, Tunis</span></div>
-    <div><b>17–18 September 2026</b><span>Higher Institute of Biotechnology of Sfax (ISBS)<br>ISBS, Sfax</span></div>
+  <div class="legs">
+    <div class="leg">
+      <div class="when">14–15 Sept 2026</div>
+      <div class="where"><b>Centre of Biotechnology of Borj Cédria (CBBC)</b><span>Espace Zmorda, Soukra, Tunis</span></div>
+    </div>
+    <div class="leg">
+      <div class="when">17–18 Sept 2026</div>
+      <div class="where"><b>Higher Institute of Biotechnology of Sfax (ISBS)</b><span>ISBS, Sfax</span></div>
+    </div>
   </div>
   <p class="hero-sub">Delivered by GetGenome and The Sainsbury Laboratory, supported through the Bifrost initiative (Kamoun Lab, TSL).</p>
+  <div class="hero-arc">
+    <figure><img src="assets/img/icon-predict.png" alt=""><figcaption>Predict</figcaption></figure>
+    <figure><img src="assets/img/icon-interpret.png" alt=""><figcaption>Interpret</figcaption></figure>
+    <figure><img src="assets/img/icon-compare.png" alt=""><figcaption>Compare</figcaption></figure>
+    <figure><img src="assets/img/icon-design.png" alt=""><figcaption>Design</figcaption></figure>
+  </div>
 </div>
 
 <h2 id="about-the-workshop">About the workshop</h2>
@@ -50,13 +62,53 @@
 <p>If you run into problems installing or opening ChimeraX, email <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#97;&#110;&#100;&#114;&#101;&#115;&#46;&#112;&#111;&#115;&#98;&#101;&#121;&#105;&#107;&#105;&#97;&#110;&#64;&#116;&#115;&#108;&#46;&#97;&#99;&#46;&#117;&#107;">&#97;&#110;&#100;&#114;&#101;&#115;&#46;&#112;&#111;&#115;&#98;&#101;&#121;&#105;&#107;&#105;&#97;&#110;&#64;&#116;&#115;&#108;&#46;&#97;&#99;&#46;&#117;&#107;</a> before the workshop. Do not worry if it is not resolved by then, as we can troubleshoot together during the session, but it would help if as many of you as possible could have ChimeraX ready beforehand.</p>
 <p>You will need to bring your own laptop. Computers are not provided at either venue.</p>
 <h2 id="the-practical-sessions">The practical sessions</h2>
-<ul>
-<li><strong><a href="01-predict.html">Practical 1: Predict</a></strong> · Submit your sequence data to predict models, interpret and compare scores across complexes. Day 1, 11:20.</li>
-<li><strong><a href="02-interpret.html">Practical 2: Interpret</a></strong> · Introduction to molecular visualisation to interpret protein models and design key experiments. Day 1, 15:15.</li>
-<li><strong><a href="03-compare.html">Practical 3: Compare</a></strong> · Align structures to reveal hidden relationships beyond sequence similarity. Day 2, 09:30.</li>
-<li><strong><a href="04-design.html">Practical 4: Design</a></strong> · Design de novo structures and binders against a target to create novel solutions. Day 2, 13:30.</li>
-</ul>
+<div class="flow" markdown="0">
+  <a class="flow-card" href="01-predict.html">
+    <img src="assets/img/icon-predict.png" alt="">
+    <b>Predict</b>
+    <span class="flow-when">Day 1 · 11:20</span>
+    <span class="flow-text">Submit your sequence data to predict models, interpret and compare scores across complexes.</span>
+  </a>
+  <a class="flow-card" href="02-interpret.html">
+    <img src="assets/img/icon-interpret.png" alt="">
+    <b>Interpret</b>
+    <span class="flow-when">Day 1 · 15:15</span>
+    <span class="flow-text">Introduction to molecular visualisation to interpret protein models and design key experiments.</span>
+  </a>
+  <a class="flow-card" href="03-compare.html">
+    <img src="assets/img/icon-compare.png" alt="">
+    <b>Compare</b>
+    <span class="flow-when">Day 2 · 09:30</span>
+    <span class="flow-text">Align structures to reveal hidden relationships beyond sequence similarity.</span>
+  </a>
+  <a class="flow-card" href="04-design.html">
+    <img src="assets/img/icon-design.png" alt="">
+    <b>Design</b>
+    <span class="flow-when">Day 2 · 13:30</span>
+    <span class="flow-text">Design de novo structures and binders against a target to create novel solutions.</span>
+  </a>
+</div>
+
 <p>Each session has its own page under <strong>Practicals</strong>, where we add the slides, worksheets and data files.</p>
+<h2 id="have-a-look-at-a-structure">Have a look at a structure</h2>
+<p>You will spend a good part of the workshop turning a structure around on screen. Here is one to try now, from the Practical 2 data: PDB entry 7B1I. Drag to rotate, scroll or pinch to zoom.</p>
+<div class="viewer" markdown="0" data-cif="data/practical-02_interpret/exercise-2.1/7B1I.cif">
+  <div class="viewer-stage">
+    <div class="viewer-start">
+      <img src="assets/img/icon-interpret.png" alt="">
+      <button type="button" class="viewer-load">Load the structure</button>
+      <span>Around 300 KB. Works on a phone.</span>
+    </div>
+  </div>
+  <div class="viewer-bar" hidden>
+    <button type="button" data-style="cartoon" class="on">Cartoon</button>
+    <button type="button" data-style="surface">Surface</button>
+    <button type="button" data-style="sticks">Sticks</button>
+    <button type="button" data-spin class="on">Spin</button>
+    <button type="button" data-reset>Reset view</button>
+  </div>
+</div>
+
 <h2 id="schedule-at-a-glance">Schedule at a glance</h2>
 <p>The same two-day programme runs at both venues. <a href="programme.html">Full timetable</a></p>
 <div class="glance" markdown="0">
@@ -114,5 +166,6 @@
 <p><code>#GetGenome</code> <code>#AIinGenomics2026</code></p>
   </div></div>
 </div>
+<script src="viewer.js" defer></script>
 </body>
 </html>
