@@ -15,19 +15,6 @@ Everything participants need is on the website: the programme, what to install b
 
 ---
 
-## Adding slides and worksheets
-
-Trainers and facilitators: **[CONTRIBUTING.md](CONTRIBUTING.md)** walks through it. No git, no terminal. Sign in to GitHub, open the right folder, drag your file in, click commit.
-
-| What you have | Where it goes |
-|---|---|
-| Day 1 slides | [`slides/day1/`](slides/day1) |
-| Day 2 slides | [`slides/day2/`](slides/day2) |
-| Worksheets and handouts | [`worksheets/`](worksheets), one folder per practical |
-| Sequences and other input files | [`data/`](data), one folder per practical |
-
-PDF please, and no spaces in file names.
-
 ## What is in this repository
 
 ```
@@ -38,10 +25,6 @@ slides/         Slide decks, added after each workshop
 worksheets/     Printable exercise sheets
 data/           Input files for the practical sessions
 ```
-
-The site is plain HTML, so GitHub serves the files as they are. Uploading slides, worksheets or data changes nothing about the pages and cannot break them.
-
-To change the wording on a page, contact Andy.
 
 ## Questions
 
