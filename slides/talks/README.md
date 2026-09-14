@@ -10,7 +10,3 @@ in the practical folders alongside this one.
 | GOHREP it! Interactive discussions | Day 1, 13:30 |
 | Model your own proteins | Day 2, 11:30 |
 | Genomics in an AI world | Day 2, 15:05 |
-
-Name the file after the talk and the speaker, with no spaces, for example
-`Intro-to-AlphaFold_Sugihara.pdf`. These are listed on the Resources page of
-the website.
