@@ -5,11 +5,10 @@ Exercise sheets and handouts for the practical sessions.
 | Worksheet | Covers |
 |---|---|
 | [`Day1_Practicals-1-2_Worksheet.pdf`](Day1_Practicals-1-2_Worksheet.pdf) | Practicals 1 and 2 |
-| `practical-03_compare/` | To be added |
-| `practical-04_design/` | To be added |
+| [`Day2_Practicals-3-4_Worksheet.pdf`](Day2_Practicals-3-4_Worksheet.pdf) | Practicals 3 and 4 |
 
 A worksheet that covers one session goes in that session's folder. A worksheet
-that covers more than one, like the Day 1 sheet above, sits here at the top
+that covers more than one, like the two Day sheets above, sits here at the top
 level and is linked from each session page.
 
 No spaces in file names. Keep the name the same when you upload a newer
