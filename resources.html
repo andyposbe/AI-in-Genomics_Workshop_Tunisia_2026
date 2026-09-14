@@ -30,25 +30,63 @@
 <h1 id="resources">Resources</h1>
 <p class="fs-5 fw-300">Tools used in the workshop, and the materials we add afterwards.</p>
 <h2 id="tools">Tools</h2>
-<table class="kv">
+<p>Everything the four practicals use, in the order you meet it.</p>
+<table>
 <thead>
 <tr>
 <th>Tool</th>
+<th>What it does</th>
 <th>Link</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>AlphaFold Server</td>
+<td>Structure and complex prediction, Practicals 1 and 2</td>
 <td><a href="https://alphafoldserver.com/">https://alphafoldserver.com/</a></td>
 </tr>
 <tr>
 <td>UCSF ChimeraX</td>
+<td>Molecular visualisation, used throughout</td>
 <td><a href="https://www.cgl.ucsf.edu/chimerax/download.html">https://www.cgl.ucsf.edu/chimerax/download.html</a></td>
+</tr>
+<tr>
+<td>Protenix</td>
+<td>Open structure prediction, and PXDesign for binder generation in Practical 4</td>
+<td><a href="https://protenix-server.com/">https://protenix-server.com/</a></td>
+</tr>
+<tr>
+<td>NCBI blastp</td>
+<td>Sequence similarity search, Practical 3</td>
+<td><a href="https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE=Proteins">https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE=Proteins</a></td>
+</tr>
+<tr>
+<td>InterProScan</td>
+<td>Protein domain and family annotation</td>
+<td><a href="https://www.ebi.ac.uk/interpro/search/sequence/">https://www.ebi.ac.uk/interpro/search/sequence/</a></td>
+</tr>
+<tr>
+<td>TM-align</td>
+<td>Pairwise structural alignment, with a TM-score</td>
+<td><a href="https://zhanggroup.org/TM-align/">https://zhanggroup.org/TM-align/</a></td>
+</tr>
+<tr>
+<td>Foldseek</td>
+<td>Structure search against whole databases</td>
+<td><a href="https://search.foldseek.com/search">https://search.foldseek.com/search</a></td>
+</tr>
+<tr>
+<td>FoldMason</td>
+<td>Multiple structure alignment and tree</td>
+<td><a href="https://search.foldseek.com/foldmason">https://search.foldseek.com/foldmason</a></td>
+</tr>
+<tr>
+<td>ProteinMPNN</td>
+<td>Inverse folding: designs a sequence that folds into a given structure</td>
+<td><a href="https://colab.research.google.com/github/dauparas/ProteinMPNN/blob/main/colab_notebooks/quickdemo.ipynb">Colab notebook</a></td>
 </tr>
 </tbody>
 </table>
-<p><em>Further tools used in the sessions will be listed here.</em></p>
 <h2 id="talks">Talks</h2>
 <p>The decks that introduce each topic. Added during and after the workshop.</p>
 <table>
@@ -91,7 +129,92 @@
 <h2 id="exercise-slides-and-worksheets">Exercise slides and worksheets</h2>
 <p>The deck and worksheet for each practical are on that session's own page under <a href="practicals.html">Practicals</a>, and collected on <a href="materials.html">Slides &amp; worksheets</a>.</p>
 <h2 id="further-reading">Further reading</h2>
-<p><em>To be added.</em></p>
+<h3 id="fold-on-tight-ten-things-to-know-about-ai-structure-prediction-in-plant-immunity">Fold on Tight: Ten Things to Know About AI Structure Prediction in Plant Immunity</h3>
+<p>Our review of what AI structure prediction can and cannot do, written by the team running this workshop.</p>
+<div class="lessons" markdown="0">
+  <div class="lessons-head">
+    <div>
+      <p class="lessons-title">Fold on Tight</p>
+      <p class="lessons-sub">Posbeyikian, Toghani, McClelland, Kamoun, Sugihara and Contreras, 2026</p>
+    </div>
+    <a class="lessons-paper" href="https://doi.org/10.5281/zenodo.22100279" target="_blank" rel="noopener">Read the paper</a>
+  </div>
+  <div class="lessons-bar">
+    <button type="button" class="lessons-toggle">Show the posts</button>
+    <a class="lessons-thread" href="https://x.com/adnroide/status/2098114862261907926" target="_blank" rel="noopener">See the thread on X</a>
+  </div>
+  <ol class="lessons-track">
+      <li data-tweet="https://twitter.com/adnroide/status/2098114862261907926"><span class="n">&#9733;</span><div class="lesson-body"><p>The thread</p></div></li>
+      <li data-tweet="https://twitter.com/adnroide/status/2098114870830866563"><span class="n">1</span><div class="lesson-body"><p>Don't ignore confidence metrics</p></div></li>
+      <li data-tweet="https://twitter.com/adnroide/status/2098114873196437737"><span class="n">2</span><div class="lesson-body"><p>Sample multiple seeds</p></div></li>
+      <li data-tweet="https://twitter.com/adnroide/status/2098114881413112236"><span class="n">3</span><div class="lesson-body"><p>Model your proteins with other molecules</p></div></li>
+      <li data-tweet="https://twitter.com/adnroide/status/2098114890338554295"><span class="n">4</span><div class="lesson-body"><p>Structural similarity can reveal hidden relationships</p></div></li>
+      <li data-tweet="https://twitter.com/adnroide/status/2098114893685690775"><span class="n">5</span><div class="lesson-body"><p>You can never benchmark enough!</p></div></li>
+      <li data-tweet="https://twitter.com/adnroide/status/2098114896336400765"><span class="n">6</span><div class="lesson-body"><p>AI can reveal novel protein&#8211;protein interactions</p></div></li>
+      <li data-tweet="https://twitter.com/adnroide/status/2098114899637412057"><span class="n">7</span><div class="lesson-body"><p>Capture touch-and-go complexes</p></div></li>
+      <li data-tweet="https://twitter.com/adnroide/status/2098114902720151819"><span class="n">8</span><div class="lesson-body"><p>When predictions deviate from canonical models</p></div></li>
+      <li data-tweet="https://twitter.com/adnroide/status/2098114905094144102"><span class="n">9</span><div class="lesson-body"><p>Structural modeling can guide protein engineering</p></div></li>
+      <li data-tweet="https://twitter.com/adnroide/status/2098114914757890266"><span class="n">10</span><div class="lesson-body"><p>Outlook: develop a strategy to stay up to date</p></div></li>
+      <li data-tweet="https://twitter.com/adnroide/status/2098114917127614974"><span class="n">&#43;</span><div class="lesson-body"><p>More from the thread</p></div></li>
+      <li data-tweet="https://twitter.com/adnroide/status/2098114918805344691"><span class="n">&#43;</span><div class="lesson-body"><p>More from the thread</p></div></li>
+  </ol>
+</div>
+
+<h3 id="planning-a-research-project">Planning a research project</h3>
+<p>Sophien Kamoun's GOHREP and PLESI, the framework behind the <em>GOHREP it!</em> session on Day 1. <a href="https://kamounlab.medium.com/gohrep-and-plesi-guides-to-navigate-through-your-research-projects-ae354a21f1bc">Blog post</a> · <a href="https://doi.org/10.5281/zenodo.5594443">Zenodo</a></p>
+<h3 id="binder-design-beyond-the-session">Binder design, beyond the session</h3>
+<table class="kv">
+
+<tbody>
+<tr>
+<td>Adaptyv Bio</td>
+<td><a href="https://proteinbase.com/competitions">Open binder-design competitions</a></td>
+</tr>
+<tr>
+<td>Nipah results</td>
+<td><a href="https://proteinbase.com/collections/nipah-binder-competition-results">Designs, scores and measured affinities</a></td>
+</tr>
+<tr>
+<td>Adaptyv write-up</td>
+<td><a href="https://www.adaptyvbio.com/blog/nipah-submissions">Analysing the Nipah submissions</a></td>
+</tr>
+<tr>
+<td>Escalante blog</td>
+<td><a href="https://blog.escalante.bio/winning-the-de-novo-portion-of-the-adaptyv-nipah-binder-competition/">Winning the de novo portion of the competition</a></td>
+</tr>
+<tr>
+<td>Hallucination vs diffusion</td>
+<td><a href="https://blog.escalante.bio/teaching-generative-models-to-hallucinate/">Comparing design strategies</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="the-data-we-work-with">The data we work with</h3>
+<table class="kv">
+<thead>
+<tr>
+<th>Session</th>
+<th>Paper</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Practicals 1 and 2 · Pikp-HMA and AVR-Pik</td>
+<td>Maqbool et al. 2015, <em>eLife</em> 4:e08709. <a href="https://doi.org/10.7554/eLife.08709">Structural basis of pathogen recognition by an integrated HMA domain in a plant NLR immune receptor</a></td>
+</tr>
+<tr>
+<td>Practical 2 · the structure in Exercise 2.1, PDB 7B1I</td>
+<td>Maidment et al. 2021, <em>JBC</em> 296:100371. <a href="https://doi.org/10.1016/j.jbc.2021.100371">Multiple variants of the fungal effector AVR-Pik bind the HMA domain of the rice protein OsHIPP19</a></td>
+</tr>
+<tr>
+<td>Practical 3 · MAX effector structures</td>
+<td>Lahfa et al. 2024, <em>PLOS Pathogens</em> 20(5):e1012176. <a href="https://doi.org/10.1371/journal.ppat.1012176">The structural landscape and diversity of <em>Pyricularia oryzae</em> MAX effectors revisited</a></td>
+</tr>
+<tr>
+<td>Practical 4 · the MAX fold</td>
+<td>de Guillen et al. 2015, <em>PLOS Pathogens</em> 11(10):e1005228. <a href="https://doi.org/10.1371/journal.ppat.1005228">Structure analysis uncovers a highly diverse but structurally conserved effector family in phytopathogenic fungi</a></td>
+</tr>
+</tbody>
+</table>
 <h2 id="stay-in-touch">Stay in touch</h2>
 <ul>
 <li>GetGenome: <a href="https://getgenome.net/">https://getgenome.net/</a></li>
@@ -100,5 +223,6 @@
 <p><code>#GetGenome</code> <code>#AIinGenomics2026</code></p>
   </div></div>
 </div>
+<script src="lessons.js" defer></script>
 </body>
 </html>
