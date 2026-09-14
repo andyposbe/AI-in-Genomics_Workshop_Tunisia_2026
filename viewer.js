@@ -1,3 +1,31 @@
+/* Home page: copy the workshop hashtag to the clipboard. */
+(function () {
+  var btn = document.querySelector('.tag-copy');
+  if (!btn) return;
+  var timer = null;
+  function flash() {
+    btn.classList.add('is-copied');
+    clearTimeout(timer);
+    timer = setTimeout(function () { btn.classList.remove('is-copied'); }, 1800);
+  }
+  btn.addEventListener('click', function () {
+    var tag = btn.getAttribute('data-tag');
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(tag).then(flash, function () {});
+      return;
+    }
+    var t = document.createElement('textarea');
+    t.value = tag;
+    t.setAttribute('readonly', '');
+    t.style.position = 'fixed';
+    t.style.opacity = '0';
+    document.body.appendChild(t);
+    t.select();
+    try { document.execCommand('copy'); flash(); } catch (e) {}
+    document.body.removeChild(t);
+  });
+})();
+
 /* Home page structure viewer. Loads 3Dmol only when the reader asks for it. */
 (function () {
   var root = document.querySelector('.viewer');

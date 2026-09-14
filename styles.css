@@ -656,6 +656,63 @@ body { padding-top: 0; }
   letter-spacing: 0.01em;
 }
 .hero:hover .hero-arc img { transform: translateY(-3px); }
+
+/* the workshop hashtag, anchored to the end of the session-icon row ------- */
+.arc-row {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 0.6rem 2rem;
+  margin: 1.9rem 0 0.25rem;
+}
+.arc-row .hero-arc { margin: 0; flex: 0 0 auto; width: 30rem; max-width: 100%; }
+.arc-tag { padding-bottom: 0.2rem; }
+.tag-copy {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0;
+  font-family: var(--mono);
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+.tag-copy .tag-text {
+  background: linear-gradient(90deg, var(--gg-coral), var(--gg-rose) 45%, var(--gg-purple));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.tag-copy .tag-ico {
+  width: 13px;
+  height: 13px;
+  flex: 0 0 auto;
+  color: var(--gg-purple);
+  opacity: 0.45;
+  transition: opacity 0.15s;
+}
+.tag-copy:hover .tag-ico { opacity: 0.95; }
+.tag-copy:focus-visible { outline: 2px solid var(--gg-purple); outline-offset: 4px; border-radius: 4px; }
+.tag-copy .tag-state {
+  display: none;
+  padding: 0.1rem 0.5rem;
+  border-radius: var(--r-pill);
+  background: rgba(47, 158, 88, 0.12);
+  color: #1e7a40;
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+.tag-copy.is-copied .tag-state { display: inline; }
+.tag-sub {
+  display: block;
+  margin-top: 0.15rem;
+  font-size: 0.74rem;
+  color: var(--ink-muted);
+}
 .hero-arc figure:nth-child(2) img { transition-delay: 0.05s; }
 .hero-arc figure:nth-child(3) img { transition-delay: 0.1s; }
 .hero-arc figure:nth-child(4) img { transition-delay: 0.15s; }
@@ -783,6 +840,10 @@ body { padding-top: 0; }
 
 @media (max-width: 46rem) {
   .leg { grid-template-columns: 1fr; gap: 0.2rem; }
+  .arc-row { gap: 1rem; margin-top: 1.5rem; }
+  .arc-row .hero-arc { width: 22rem; }
+  .arc-tag { padding-bottom: 0; }
+  .tag-copy { font-size: 0.98rem; }
   .hero-arc { max-width: 22rem; gap: 0.3rem; }
   .hero-arc img { max-width: 56px; }
   .hero-arc figcaption { font-size: 0.7rem; }
